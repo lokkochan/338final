@@ -1,11 +1,17 @@
-package myLib.datastructures.nodes;
+package myLib.dataStructures.nodes;
 
-public class Snode {
+public class SNode {
 
     public int data;
-    public Snode next;
-    public Snode(int data){
+    public SNode next;
+    public SNode(int data){
         this.data=data;
+    }
+    public SNode getNext(){
+        return next;
+    }
+    public int getData(){
+        return data;
     }
 
 

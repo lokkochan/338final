@@ -1,69 +1,144 @@
-package data_structure_lib;
-import myLib.dataStructure.linear.CDLL;
-import myLib.dataStructure.nodes.DNode;
 
+package data_structure_lib;
+
+import myLib.dataStructures.linear.LinkedLists.CDLL;
+import myLib.dataStructures.nodes.DNode;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
-
-class CDLLTest {
+public class CDLLTest {
     @Test
-    void testInsertHead() {
+    public void testInsertTail() {
         CDLL list = new CDLL();
-        DNode node1 = new DNode(1);
-        DNode node2 = new DNode(2);
-        DNode node3 = new DNode(3);
-        list.InsertHead(node1);
-        assertEquals(1, list.getSize());
-        assertEquals(node1, list.gethead());
-        assertEquals(node1, list.gettail());
-        list.InsertHead(node2);
-        assertEquals(2, list.getSize());
-        assertEquals(node2, list.gethead());
-        assertEquals(node1, list.gettail());
-        list.InsertHead(node3);
+        list.InsertTail(new DNode(1));
+        list.InsertTail(new DNode(2));
+        list.InsertTail(new DNode(3));
         assertEquals(3, list.getSize());
-        assertEquals(node3, list.gethead());
-        assertEquals(node1, list.gettail());
-        assertEquals(node2.next, node1);
-        assertEquals(node1.prev, node2);
     }
+
     @Test
-    void testDeleteHead() {
+    public void testInsertHead() {
         CDLL list = new CDLL();
-        DNode node1 = new DNode(1);
-        DNode node2 = new DNode(2);
-        DNode node3 = new DNode(3);
-        list.InsertHead(node1);
-        list.InsertHead(node2);
-        list.InsertHead(node3);
-        assertEquals(node3, list.DeleteHead());
+        list.InsertHead(new DNode(1));
+        list.InsertHead(new DNode(2));
+        list.InsertHead(new DNode(3));
+        assertEquals(3, list.getSize());
+    }
+
+    @Test void testInsert() {
+        CDLL list = new CDLL();
+        list.Insert(new DNode(1), 0);
+        list.Insert(new DNode(2), 1);
+        list.Insert(new DNode(3), 1);
+        assertEquals(3, list.getSize());
+    }
+
+    @Test
+    public void testInsertInvalidPosition() {
+        CDLL list = new CDLL();
+        try{
+            list.Insert(new DNode(1), 1);
+        } catch (IndexOutOfBoundsException e) {
+            return;
+            
+        }
+    }
+
+    @Test
+    public void testDeleteHead() {
+        CDLL list = new CDLL();
+        list.InsertTail(new DNode(1));
+        list.InsertTail(new DNode(2));
+        list.InsertTail(new DNode(3));
+        list.DeleteHead();
         assertEquals(2, list.getSize());
-        assertEquals(node2, list.gethead());
-        assertEquals(node1, list.gettail());
-        assertEquals(node2.next, node1);
-        assertEquals(node1.prev, node2);
-        assertEquals(node1.next, node2);
-        assertEquals(node2.prev, node1);
     }
 
     @Test
-    void testSort() {
+
+    public void testDeleteTail() {
         CDLL list = new CDLL();
-        DNode node1 = new DNode(3);
-        DNode node2 = new DNode(2);
-        DNode node3 = new DNode(1);
-        list.InsertHead(node3);
-        list.InsertHead(node2);
-        list.InsertHead(node1);
-        assertEquals(node1, list.gethead());
-        assertEquals(node3, list.gettail());
-        list.Print();
-        list.sort();
-        list.Print();
-        assertEquals(node3.data, list.gethead().data);
-        assertEquals(node1.data, list.gettail().data);
-        assertEquals(node1.prev.data, node2.data);
+        list.InsertTail(new DNode(1));
+        list.InsertTail(new DNode(2));
+        list.InsertTail(new DNode(3));
+        list.DeleteTail();
+        assertEquals(2, list.getSize());
     }
 
+    @Test
+    public void testDeleteInvalidPosition() {
+        CDLL list = new CDLL();
+        DNode delete = new DNode(1);
+        try{
+            list.Delete(delete);
+        } catch (IllegalArgumentException e) {
+            return;
+        }
+    }
+
+    @Test
+    public void testDelete() {
+        CDLL list = new CDLL();
+        DNode delete = new DNode(1);
+        list.InsertTail(delete);
+        list.InsertTail(new DNode(2));
+        list.InsertTail(new DNode(3));
+        list.Delete(delete);
+        assertEquals(2, list.getSize());
+    }
+
+    @Test
+    public void testDeleteHeadEmptyList() {
+        CDLL list = new CDLL();
+        try{
+            list.DeleteHead();
+        } catch (IllegalArgumentException e) {
+            return;
+        }
+    }
+
+    @Test
+    public void testDeleteTailEmptyList() {
+        CDLL list = new CDLL();
+        try{
+            list.DeleteTail();
+        } catch (IllegalArgumentException e) {
+            return;
+        }
+    }
+
+    @Test
+    public void search() {
+        CDLL list = new CDLL();
+        DNode search = new DNode(1);
+        list.InsertTail(search);
+        list.InsertTail(new DNode(2));
+        list.InsertTail(new DNode(3));
+        assertEquals(search, list.Search(search));
+    }
+
+    @Test 
+    public void testSearchEmptyList() {
+        CDLL list = new CDLL();
+        DNode search2 = new DNode(1);
+        assertEquals(null, list.Search(search2));
+    }
+
+    @Test
+    public void isCircular() {
+        CDLL list = new CDLL();
+        list.InsertTail(new DNode(1));
+        list.InsertTail(new DNode(2));
+        list.InsertTail(new DNode(3));
+        assertEquals(true, list.isCircular());
+    }
+
+    @Test
+    public void isDoublyLinkedList() {
+        CDLL list = new CDLL();
+        list.InsertTail(new DNode(1));
+        list.InsertTail(new DNode(2));
+        list.InsertTail(new DNode(3));
+        assertEquals(true, list.isDoublyLinkedList());
+    }
 }

@@ -1,23 +1,26 @@
-package myLib.datastructures.linear.LinkedLists;
+package myLib.dataStructures.linear.LinkedLists;
 
-import myLib.datastructures.nodes.Snode;
+import myLib.dataStructures.nodes.SNode;
 
 public class CSLL extends SLL{
     public CSLL(){
         super();
 
     }
-    public CSLL(Snode data){
+    public CSLL(SNode data){
         super(data);
         super.head.next=super.head;
     }
+    public int size(){
+        return super.size;
+    }
     @Override
-    public void InsertTail(Snode node){
+    public void InsertTail(SNode node){
         if(super.head==null){
             super.head=node;
             node.next=node;}
         else{
-        Snode temp =super.head;
+        SNode temp =super.head;
         while(temp.next!=super.head){
             temp=temp.next;
         }
@@ -26,20 +29,26 @@ public class CSLL extends SLL{
         super.size++;
     }
     @Override
-    public void InsertHead(Snode node){
-        Snode temp =super.head;
+    public void InsertHead(SNode node){
+        if(super.head==null){
+            super.head=node;
+            node.next=node;
+            super.size++;
+        }
+        else{
+        SNode temp =super.head;
         while(temp.next!=super.head){
             temp=temp.next;
         }
         temp.next=node;
         node.next=super.head;
         super.head=node;
-        super.size++;
+        super.size++;}
     }
 
     @Override
-    public void Insert(Snode node,int index){
-        if(index<0 || index>super.size){
+    public void Insert(SNode node,int index){
+        if(index<0 || index>this.getsize()){
             throw new IndexOutOfBoundsException();
         }
         if(index==0){
@@ -50,7 +59,7 @@ public class CSLL extends SLL{
             InsertTail(node);
             return;
         }
-        Snode temp =super.head;
+        SNode temp =super.head;
         for(int i=0;i<index-1;i++){
             temp=temp.next;
         }
@@ -64,7 +73,7 @@ public class CSLL extends SLL{
 
     @Override
     public void DeleteHead(){
-        Snode temp =super.head;
+        SNode temp =super.head;
         while(temp.next!=super.head){
             temp=temp.next;
         }
@@ -75,7 +84,7 @@ public class CSLL extends SLL{
 
     @Override
     public void DeleteTail(){
-        Snode temp =super.head;
+        SNode temp =super.head;
         while(temp.next.next!=super.head){
             temp=temp.next;
         }
@@ -85,7 +94,7 @@ public class CSLL extends SLL{
 
     @Override
     public boolean isSorted(){
-        Snode temp =super.head;
+        SNode temp =super.head;
         while(temp.next!=super.head){
             if(temp.data>temp.next.data){
                 return false;
@@ -97,9 +106,9 @@ public class CSLL extends SLL{
 
     @Override
     public void Sort(){
-        Snode temp =super.head;
+        SNode temp =super.head;
         while(temp.next!=super.head){
-            Snode temp2 =temp.next;
+            SNode temp2 =temp.next;
             while(temp2!=super.head){
                 if(temp.data>temp2.data){
                     int temp3 =temp.data;
@@ -113,11 +122,11 @@ public class CSLL extends SLL{
     }
 
     @Override
-    public void Delete(Snode node){
+    public void Delete(SNode node){
         if(Search(node)==null){
             throw new NullPointerException();
         }
-        Snode temp =super.head;
+        SNode temp =super.head;
         while(temp.next!=super.head){
             if(temp.next.data==node.data){
                 temp.next=temp.next.next;
@@ -130,8 +139,8 @@ public class CSLL extends SLL{
     
     
     public boolean isCircular() {
-        Snode slow = head;
-        Snode fast = head;
+        SNode slow = head;
+        SNode fast = head;
     
         while (fast != null && fast.next != null) {
             slow = slow.next;
@@ -151,8 +160,8 @@ public class CSLL extends SLL{
     }
 
     @Override 
-    public Snode Search(Snode node){
-        Snode temp =super.head;
+    public SNode Search(SNode node){
+        SNode temp =super.head;
         while(temp.next!=super.head){
             if(temp.data==node.data){
                 return temp;
@@ -170,7 +179,7 @@ public class CSLL extends SLL{
             return;
         }
         System.out.println("List Length: "+super.size);
-        Snode temp =super.head;
+        SNode temp =super.head;
         System.out.println("Sorted status:"+isSorted());
         System.out.println("List content:   ");
         while(temp.next!=super.head){
@@ -182,12 +191,12 @@ public class CSLL extends SLL{
     }
     public static void main (String[] args){
         CSLL list =new CSLL();
-        list.InsertTail(new Snode(1));
-        list.InsertTail(new Snode(2));
-        list.InsertTail(new Snode(4));
-        list.InsertTail(new Snode(3));
+        list.InsertTail(new SNode(1));
+        list.InsertTail(new SNode(2));
+        list.InsertTail(new SNode(4));
+        list.InsertTail(new SNode(3));
         list.Print();
-        list.InsertHead(new Snode(0));
+        list.InsertHead(new SNode(0));
         list.Print();
         list.Sort();
         list.Print();
@@ -200,7 +209,7 @@ public class CSLL extends SLL{
         System.out.println("Delete Tail");
         list.DeleteTail();
         list.Print();
-        Snode nodeWantToBeDeleted=new Snode(5);
+        SNode nodeWantToBeDeleted=new SNode(5);
         list.Insert(nodeWantToBeDeleted, 1);
         list.Print();
 

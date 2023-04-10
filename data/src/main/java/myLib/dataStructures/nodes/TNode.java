@@ -1,4 +1,4 @@
-package myLib.dataStructure.nodes;
+package myLib.dataStructures.nodes;
 
 public class TNode {
     private int data;

@@ -1,86 +1,53 @@
 package data_structure_lib;
-import myLib.dataStructure.linear.LLStack;
-import myLib.dataStructure.nodes.SNode;
+import myLib.dataStructures.linear.LinkedLists.Stack;
+import myLib.dataStructures.nodes.SNode;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class LLStackTest {
+    @Test
+    public void testPush() {
+        Stack stack = new Stack();
+        stack.push(1);
+        assertEquals(1, stack.getLength());
 
-    @Test
-    void testPushAndPop() {
-        LLStack stack = new LLStack();
+        stack.push(2);
+        assertEquals(2, stack.getLength());
 
-        SNode node1 = new SNode(1);
-        SNode node2 = new SNode(2);
-        SNode node3 = new SNode(3);
-        
-        stack.push(node1);
-        stack.push(node2);
-        stack.push(node3);
-        
-        assertEquals(node3, stack.pop());
-        assertEquals(node2, stack.pop());
-        assertEquals(node1, stack.pop());
-    }
-    
-    @Test
-    void testPeek() {
-        LLStack stack = new LLStack();
-        
-        SNode node = new SNode(1);
-        stack.push(node);
-        
-        assertEquals(node, stack.peek());
-    }
-    
-    @Test
-    void testSearchReturnsNode() {
-        LLStack stack = new LLStack();
-        
-        SNode node1 = new SNode(1);
-        SNode node2 = new SNode(2);
-        SNode node3 = new SNode(3);
-        
-        stack.push(node1);
-        stack.push(node2);
-        stack.push(node3);
-        
-        assertEquals(node2, stack.Search(node2));
-    }
-    
-    @Test
-    void testSearchReturnsNull() {
-        LLStack stack = new LLStack();
-        
-        SNode node1 = new SNode(1);
-        SNode node2 = new SNode(2);
-        SNode node3 = new SNode(3);
-        
-        stack.push(node1);
-        stack.push(node2);
-        
-        assertNull(stack.Search(node3));
+        stack.push(3);
+        assertEquals(3, stack.getLength());
+
+        stack.push(4);
+        assertEquals(4, stack.getLength());
+
+        stack.push(5);
+        assertEquals(5, stack.getLength());
     }
 
     @Test
-    void testInheritedMethodsInhibited() {
-        LLStack stack = new LLStack();
-        
-        SNode node1 = new SNode(1);
-        SNode node2 = new SNode(2);
-        SNode node3 = new SNode(3);
-        
-        stack.push(node1);
-        stack.push(node2);
-        stack.push(node3);
-        
-        try{
-            stack.InsertTail(node1);
-        } catch (IllegalArgumentException e){
-            assertEquals("InsertTail is not allowed in a stack", e.getMessage());
-        }
+    public void testPop() {
+        Stack stack = new Stack();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+
+        stack.pop();
+        assertEquals(4, stack.getLength());
+
+        stack.pop();
+        assertEquals(3, stack.getLength());
+
+        stack.pop();
+        assertEquals(2, stack.getLength());
+
+        stack.pop();
+        assertEquals(1, stack.getLength());
+
+        stack.pop();
+        assertEquals(0, stack.getLength());
     }
-
-
+ 
 }

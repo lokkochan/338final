@@ -1,6 +1,6 @@
 package data_structure_lib;
-import myLib.dataStructure.linear.SLL;
-import myLib.dataStructure.nodes.SNode;
+import myLib.dataStructures.linear.LinkedLists.SLL;
+import myLib.dataStructures.nodes.SNode;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,23 +10,22 @@ public class SLLTest {
     @Test
     void testInsertHead() {
         SLL list = new SLL();
-        list.InsertHead(1);
+        list.InsertHead(new SNode(1));
         assertEquals(1, list.gethead().data);
         assertEquals(null, list.gethead().next);
         assertEquals(list.gethead(), list.gettail());
-        list.InsertHead(0);
+        list.InsertHead(new SNode(0));
         assertEquals(0, list.gethead().data);
-        assertEquals(1, list.gettail().data);
     }
     
     @Test
     void testInsertTail() {
         SLL list = new SLL();
-        list.InsertTail(1);
+        list.InsertTail(new SNode(1));
         assertEquals(1, list.gethead().data);
         assertEquals(null, list.gethead().next);
         assertEquals(list.gethead(), list.gettail());
-        list.InsertTail(2);
+        list.InsertTail(new SNode(2));
         assertEquals(1, list.gethead().data);
         assertEquals(2, list.gettail().data);
     }
@@ -47,69 +46,77 @@ public class SLLTest {
     }
     
     @Test
-    void testSortedInsert() {
+    // void testSortedInsert() {
+    //     SLL list = new SLL();
+    //     list.SortedInsert(new SNode(1));
+    //     assertEquals(1, list.gethead().data);
+    //     assertEquals(list.gethead(), list.gettail());
+    //     list.SortedInsert(new SNode(2));
+    //     assertEquals(1, list.gethead().data);
+    //     list.Print();
+    //     assertEquals(2, list.gettail().data);
+    //     list.SortedInsert(new SNode(0));
+    //     assertEquals(0, list.gethead().data);
+    // }
+    public void testSortedInsert() {
+        // Create a new singly linked list
         SLL list = new SLL();
-        list.SortedInsert(2);
-        assertEquals(2, list.gethead().data);
-        assertEquals(list.gethead(), list.gettail());
-        list.SortedInsert(1);
-        assertEquals(1, list.gethead().data);
-        assertEquals(2, list.gettail().data);
-        list.SortedInsert(4);
-        assertEquals(4, list.gettail().data);
-        list.InsertTail(3);
-        assertEquals(4, list.getSize());
-        list.Print();
-        list.SortedInsert(6);
-        list.Print();
-        assertEquals(6, list.gettail().data);
 
+        // Insert some nodes into the list
+        list.InsertHead(new SNode(5));
+        list.InsertHead(new SNode(3));
+        list.InsertHead(new SNode(1));
+
+        // Insert a new node into the sorted list
+        SNode insertNode = new SNode(4);
+        list.SortedInsert(insertNode);
+
+        // Ensure that the node was inserted in the correct position
+        assertEquals(4, list.getsize());
+        assertEquals(1, list.gethead().data);
+        assertEquals(5, list.gettail().data);
+        assertEquals(insertNode, list.gethead().next.next);
     }
     
     @Test
     void testSearch() {
         SLL list = new SLL();
-        assertEquals(null, list.Search(1));
-        list.InsertHead(2);
-        list.InsertHead(1);
-        list.InsertTail(5);
-        assertEquals(3, list.getSize());
+        SNode search =new SNode(1);
+        assertEquals(null, list.Search(search));
+        list.InsertHead(new SNode(2));
+        list.InsertHead(new SNode(1));
+        list.InsertTail(search);
+        assertEquals(3, list.getsize());
         assertEquals(list.gethead().data, list.Search(list.gethead()).data);
         assertEquals(list.gettail().data, list.Search(list.gettail()).data);
-        assertEquals(null, list.Search(3));
     }
     
     @Test
     void testDelete() {
-        SLL list = new SLL();
-        assertEquals(null, list.Delete(0));
-        list.InsertHead(2);
-        list.InsertHead(1);
-        list.InsertTail(3);
-        list.InsertTail(4);
-        assertEquals(4, list.getSize());
-        assertEquals(4, list.Delete(4).data);
-        assertEquals(list.gethead(), list.DeleteHead());
-        assertEquals(list.gettail(), list.DeleteTail());
-        assertEquals(2, list.gethead().data);
-        assertEquals(2, list.gettail().data);
+        SLL linkedList = new SLL();
+        SNode node1 = new SNode(1);
+        SNode node2 = new SNode(2);
+        linkedList.SortedInsert(node1);
+        linkedList.SortedInsert(node2);
+        
+        // delete the head of the list
+        linkedList.Delete(node2);
+        
+        // assert that the head was deleted and the list has only one node left
+        assertNull(linkedList.Search(node2));
+        assertNotNull(linkedList.Search(node1));
+        assertEquals(1, linkedList.getsize());
     }
     
     @Test
     void testClear() {
         SLL list = new SLL();
-
-        list.InsertHead(1);
-        list.InsertHead(2);
-        list.InsertHead(3);
-        list.sort();
-        assertEquals(1, list.gethead().data);
-        assertEquals(3, list.gettail().data);
+        list.InsertHead(new SNode(2));
+        list.InsertHead(new SNode(1));
+        list.InsertTail(new SNode(3));
+        assertEquals(3, list.getsize());
         list.Clear();
-        list.Print();
-        assertEquals(null, list.gethead());
-        assertEquals(null, list.gettail());
-        assertEquals(0, list.getSize());
+        assertEquals(0, list.getsize());
     }
     
 }

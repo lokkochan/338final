@@ -1,23 +1,35 @@
-package myLib.datastructures.linear.LinkedLists;
+package myLib.dataStructures.linear.LinkedLists;
 
-import myLib.datastructures.nodes.Snode;
+import java.rmi.StubNotFoundException;
+
+import myLib.dataStructures.nodes.SNode;
 
 public class SLL {
     //implement the singly linked list
-    protected Snode head ;
-    protected Snode tail;
+    protected SNode head ;
+    protected SNode tail;
     protected int size;
+    public SNode gethead(){
+        return head;
+    }
+    public SNode gettail(){
+        return tail;
+        
+    }
+    public int getsize(){
+        return size;
+    }
     public SLL(){
         head = null;
         tail = null;
         size = 0;
     }
-    public SLL(Snode head){
+    public SLL(SNode head){
         this.head = head;
         tail = head;
         size = 1;
     }
-    public void InsertHead(Snode insertHeadNode){
+    public void InsertHead(SNode insertHeadNode){
         if(head == null){
             head = insertHeadNode;
             tail = insertHeadNode;
@@ -28,7 +40,7 @@ public class SLL {
         size++;
         
     }
-    public void InsertTail(Snode insertTailNode){
+    public void InsertTail(SNode insertTailNode){
         if(head == null){
             head = insertTailNode;
             tail = insertTailNode;
@@ -38,7 +50,10 @@ public class SLL {
         }
         size++;
     }
-    public void Insert(Snode insertNode, int index){
+    public void Insert(SNode insertNode, int index){
+        if(head == null && index != 0){
+            throw new IllegalArgumentException("List is empty");
+        }
         if(index < 0 || index > size){
             throw new IndexOutOfBoundsException("Index out of bounds");
         }
@@ -47,7 +62,7 @@ public class SLL {
         }else if(index == size){
             InsertTail(insertNode);
         }else{
-            Snode temp = head;
+            SNode temp = head;
             for(int i = 0; i < index - 1; i++){
                 temp = temp.next;
             }
@@ -56,7 +71,7 @@ public class SLL {
             size++;
         }
     }
-    public void SortedInsert(Snode insertNode){
+    public void SortedInsert(SNode insertNode){
         if(!isSorted()){
             Sort();
         }
@@ -67,7 +82,7 @@ public class SLL {
             insertNode.next = head;
             head = insertNode;
         }else{
-            Snode temp = head;
+            SNode temp = head;
             while(temp.next != null && temp.next.data < insertNode.data){
                 temp = temp.next;
             }
@@ -80,7 +95,7 @@ public class SLL {
         if(head == null){
             return true;
         }
-        Snode temp = head;
+        SNode temp = head;
         while(temp.next != null){
             if(temp.data > temp.next.data){
                 return false;
@@ -89,8 +104,8 @@ public class SLL {
         }
         return true;
     }
-    public Snode Search(Snode searchNode){
-        Snode temp = head;
+    public SNode Search(SNode searchNode){
+        SNode temp = head;
         while(temp != null){
             if(temp.data == searchNode.data){
                 return temp;
@@ -110,7 +125,7 @@ public class SLL {
         if(head == null){
             throw new IllegalStateException("List is empty");
         }
-        Snode temp = head;
+        SNode temp = head;
         while(temp.next != tail){
             temp = temp.next;
         }
@@ -118,9 +133,12 @@ public class SLL {
         tail = temp;
         size--;
     }
-    public void Delete(Snode node){
+    public void Delete(SNode node){
         if(Search(node)==null){
-            throw new IllegalStateException("Node not found");
+            throw new IllegalArgumentException();
+        }
+        if(Search(node)==null){
+            throw new IllegalArgumentException();
         }
         if(head == null){
             throw new IllegalStateException("List is empty");
@@ -130,7 +148,7 @@ public class SLL {
         }else if(tail == node){
             DeleteTail();
         }else{
-            Snode temp = head;
+            SNode temp = head;
             while(temp.next != node){
                 temp = temp.next;
             }
@@ -138,15 +156,14 @@ public class SLL {
             size--;
         }
 
-
     }
     public void Sort(){
         if(head == null){
             throw new IllegalStateException("List is empty");
         }
-        Snode temp = head;
+        SNode temp = head;
         while(temp.next != null){
-            Snode temp2 = temp.next;
+            SNode temp2 = temp.next;
             while(temp2 != null){
                 if(temp.data > temp2.data){
                     int tempData = temp.data;
@@ -167,7 +184,7 @@ public class SLL {
         System.out.println("List length: "+ size);
         System.out.println("Sorted status: "+ isSorted());
         System.out.println("List contents:");
-        Snode temp = head;
+        SNode temp = head;
         while(temp != null){
             System.out.println(temp.data);
             temp = temp.next;
@@ -177,28 +194,28 @@ public class SLL {
     }
     public static void main(String[] args) {
         SLL list = new SLL();
-        list.InsertHead(new Snode(1));//Test insert head
-        list.InsertHead(new Snode(2));
-        list.InsertHead(new Snode(3));
-        list.InsertTail(new Snode(4));
-        Snode node = new Snode(5);
+        list.InsertHead(new SNode(1));//Test insert head
+        list.InsertHead(new SNode(2));
+        list.InsertHead(new SNode(3));
+        list.InsertTail(new SNode(4));
+        SNode node = new SNode(5);
         list.Insert(node, 2);   //Test inset at index
         list.Delete(node);    //Test delete node
         list.Print();           //Test print
         list.Sort();            //Test sort-th list will be sorted after this
         System.out.println("After sorted");
         list.Print();
-        list.SortedInsert(new Snode(8));    //Test sorted insert
-        list.SortedInsert(new Snode(7));        //Test sorted insert
+        list.SortedInsert(new SNode(8));    //Test sorted insert
+        list.SortedInsert(new SNode(7));        //Test sorted insert
         list.Print();
 
         System.out.println("---------------------");
         SLL list2 = new SLL();
-        list2.InsertTail(new Snode(10)); //Test insert tail
-        list2.InsertTail(new Snode(9));
-        list2.InsertHead(new Snode(8));
-        list2.InsertHead(new Snode(2));
-        Snode nodeDelete = new Snode(5);
+        list2.InsertTail(new SNode(10)); //Test insert tail
+        list2.InsertTail(new SNode(9));
+        list2.InsertHead(new SNode(8));
+        list2.InsertHead(new SNode(2));
+        SNode nodeDelete = new SNode(5);
         list2.Insert(nodeDelete, 2);    //Test insert at index
         list2.Print();
         list2.Delete(nodeDelete);   //Test delete node
