@@ -1,21 +1,14 @@
-package myLib.dataStructure.nodes;
+package mylib.datastructures.nodes;
 
-public class SNode{
+public class Snode {
+
     public int data;
-    public SNode next;
-
-    public SNode(int data){
-        this.data = data;
-        this.next = null;
+    public Snode next;
+    public Snode(int data){
+        this.data=data;
     }
 
-    public SNode(int data, SNode next){
-        this.data = data;
-        this.next = next;
-    }
 
-    public void setNull(){
-        this.next = null;
-    }
+
     
 }

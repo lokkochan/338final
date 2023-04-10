@@ -1,30 +1,17 @@
-package myLib.dataStructure.nodes;
+package mylib.datastructures.nodes;
 
-public class DNode{
+public class Dnode {
     public int data;
-    public DNode next;
-    public DNode prev;
-
-    public DNode(int data){
-        this.data = data;
-        this.next = null;
-        this.prev = null;
+    public Dnode prev;
+    public Dnode next;
+    public Dnode(int data){
+        this.data=data;
+        
     }
+    
 
-    public DNode(int data, DNode prev, DNode next){
-        this.data = data;
-        this.next = next;
-        this.prev = prev;
-    }
 
-    public DNode(int data, DNode next){
-        this.data = data;
-        this.next = next;
-        this.prev = null;
-    }
 
-    public void setNull(){
-        this.next = null;
-        this.prev = null;
-    }
+
+    
 }
