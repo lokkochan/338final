@@ -1,6 +1,6 @@
-package mylib.datastructures.linear.LinkedLists;
+package myLib.datastructures.linear.LinkedLists;
 
-import mylib.datastructures.nodes.Snode;
+import myLib.datastructures.nodes.Snode;
 
 public class SLL {
     //implement the singly linked list

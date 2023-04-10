@@ -1,4 +1,4 @@
-package mylib.datastructures.nodes;
+package myLib.datastructures.nodes;
 
 public class Snode {
 

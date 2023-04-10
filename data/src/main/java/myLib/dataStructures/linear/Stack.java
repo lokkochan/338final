@@ -1,7 +1,7 @@
-package mylib.datastructures.linear;
+package myLib.datastructures.linear;
 
-import mylib.datastructures.linear.LinkedLists.SLL;
-import mylib.datastructures.nodes.Snode;
+import myLib.datastructures.linear.LinkedLists.SLL;
+import myLib.datastructures.nodes.Snode;
 
 public class Stack extends SLL {
     public Stack() {

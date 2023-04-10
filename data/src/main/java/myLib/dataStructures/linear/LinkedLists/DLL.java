@@ -1,6 +1,6 @@
-package mylib.datastructures.linear.LinkedLists;
+package myLib.datastructures.linear.LinkedLists;
 
-import mylib.datastructures.nodes.Dnode;
+import myLib.datastructures.nodes.Dnode;
 
 public class DLL {
     protected Dnode head;
