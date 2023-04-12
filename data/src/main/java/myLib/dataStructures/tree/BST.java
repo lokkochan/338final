@@ -1,7 +1,7 @@
-package myLib.dataStructure.tree;
+package myLib.dataStructures.tree;
 import java.util.Queue;
 
-import myLib.dataStructure.nodes.TNode;
+import myLib.dataStructures.nodes.TNode;
 
 public class BST {
     protected TNode root;

@@ -1,4 +1,4 @@
-package myLib.dataStructures.linear.LinkedLists;
+package myLib.dataStructures.linear;
 
 import myLib.dataStructures.nodes.SNode;
 
@@ -189,51 +189,5 @@ public class CSLL extends SLL{
         System.out.println(temp.data);
         System.out.println("--------------------");
     }
-    public static void main (String[] args){
-        CSLL list =new CSLL();
-        list.InsertTail(new SNode(1));
-        list.InsertTail(new SNode(2));
-        list.InsertTail(new SNode(4));
-        list.InsertTail(new SNode(3));
-        list.Print();
-        list.InsertHead(new SNode(0));
-        list.Print();
-        list.Sort();
-        list.Print();
-        System.out.println("isCircular: "+list.isCircular());
-
-        System.out.println("Delete Head");
-        list.DeleteHead();
-        list.Print();
-
-        System.out.println("Delete Tail");
-        list.DeleteTail();
-        list.Print();
-        SNode nodeWantToBeDeleted=new SNode(5);
-        list.Insert(nodeWantToBeDeleted, 1);
-        list.Print();
-
-        
-        System.out.println("Search node: "+nodeWantToBeDeleted.data);
-        System.out.println("Found node: "+list.Search(nodeWantToBeDeleted).data);
-
-
-
-        System.out.println("Delete node: "+nodeWantToBeDeleted.data);
-        list.Delete(nodeWantToBeDeleted);
-        list.Print();
-        System.out.println("is it circular?: "+list.isCircular());//check if it is circular
-
-        System.out.println("List clear");
-        list.Clear();
-        list.Print();
-
-
-
-
-
-    }
-
-
     
 }

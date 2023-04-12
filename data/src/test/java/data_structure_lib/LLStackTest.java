@@ -1,6 +1,5 @@
 package data_structure_lib;
-import myLib.dataStructures.linear.LinkedLists.Stack;
-import myLib.dataStructures.nodes.SNode;
+import myLib.dataStructures.linear.Stack;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

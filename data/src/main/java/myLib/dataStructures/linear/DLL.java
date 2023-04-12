@@ -1,4 +1,4 @@
-package myLib.dataStructures.linear.LinkedLists;
+package myLib.dataStructures.linear;
 
 import myLib.dataStructures.nodes.DNode;
 
@@ -249,31 +249,5 @@ public class DLL {
         }
         return true;
     }
-    
-    public static void main(String[] args) {
-        DLL list =new DLL();
-        list.InsertHead(new DNode(1));
-        list.InsertHead(new DNode(2));
-        list.InsertTail(new DNode(9));
-        list.Insert(new DNode(5), 2);
-        list.Print();
-        list.DeleteHead();
-        list.Print();
-        list.DeleteTail();
-        list.Print();
-        list.Insert(new DNode(100), 1);
-        list.InsertTail(new DNode(101));
-        list.Print();
-        // list.Delete(new Dnode(102));//Throw exception
-        System.out.println("List is doubly linked list: " + list.isDoublyLinkedList());
-    }
 
-
-
-
-
-
-
-
-    
 }

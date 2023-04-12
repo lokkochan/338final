@@ -1,6 +1,4 @@
-package myLib.dataStructures.linear.LinkedLists;
-
-import java.rmi.StubNotFoundException;
+package myLib.dataStructures.linear;
 
 import myLib.dataStructures.nodes.SNode;
 
@@ -189,42 +187,6 @@ public class SLL {
             System.out.println(temp.data);
             temp = temp.next;
         }
-
-
-    }
-    public static void main(String[] args) {
-        SLL list = new SLL();
-        list.InsertHead(new SNode(1));//Test insert head
-        list.InsertHead(new SNode(2));
-        list.InsertHead(new SNode(3));
-        list.InsertTail(new SNode(4));
-        SNode node = new SNode(5);
-        list.Insert(node, 2);   //Test inset at index
-        list.Delete(node);    //Test delete node
-        list.Print();           //Test print
-        list.Sort();            //Test sort-th list will be sorted after this
-        System.out.println("After sorted");
-        list.Print();
-        list.SortedInsert(new SNode(8));    //Test sorted insert
-        list.SortedInsert(new SNode(7));        //Test sorted insert
-        list.Print();
-
-        System.out.println("---------------------");
-        SLL list2 = new SLL();
-        list2.InsertTail(new SNode(10)); //Test insert tail
-        list2.InsertTail(new SNode(9));
-        list2.InsertHead(new SNode(8));
-        list2.InsertHead(new SNode(2));
-        SNode nodeDelete = new SNode(5);
-        list2.Insert(nodeDelete, 2);    //Test insert at index
-        list2.Print();
-        list2.Delete(nodeDelete);   //Test delete node
-        list2.Print();
-        list2.Sort();        //Test sort
-        System.out.println("After sorted");
-        list2.Print();
-        list2.Clear();    //Test clear
-        list2.Print();  //the list should be empty
 
 
     }

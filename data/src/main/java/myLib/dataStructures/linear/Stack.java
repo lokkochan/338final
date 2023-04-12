@@ -1,4 +1,4 @@
-package myLib.dataStructures.linear.LinkedLists;
+package myLib.dataStructures.linear;
 
 import myLib.dataStructures.nodes.SNode;
 
@@ -67,27 +67,5 @@ public class Stack extends SLL {
         }
         System.out.println();
     }
-    
-   
-    public static void main(String[] args) {
-        Stack stack = new Stack();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-        stack.push(5);
-        stack.push(6);
-        stack.push(7);
-        stack.push(8);
-        stack.push(9);
-        stack.push(10);
-        stack.pop();
-        stack.push(1000);
-        stack.push(999);
-        stack.Print();
-
-        
-    }
-
     
 }

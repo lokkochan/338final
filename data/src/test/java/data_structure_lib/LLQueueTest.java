@@ -1,5 +1,5 @@
 package data_structure_lib;
-import myLib.dataStructures.linear.LinkedLists.Queue;
+import myLib.dataStructures.linear.Queue;
 import myLib.dataStructures.nodes.SNode;
 
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package myLib.dataStructures.linear.LinkedLists;
+package myLib.dataStructures.linear;
 
 import myLib.dataStructures.nodes.SNode;
 
@@ -49,25 +49,6 @@ public class Queue extends SLL {
         if(super.head == null){
             return 0;}
         return super.size;
-    }
-    public static void main(String[] args) {
-        Queue queue = new Queue();
-        queue.enqueue(new SNode(1));
-        queue.enqueue(new SNode(2));
-        queue.enqueue(new SNode(3));
-        queue.enqueue(new SNode(4));
-        queue.enqueue(new SNode(5));
-        queue.enqueue(new SNode(6));
-        queue.enqueue(new SNode(7));
-        queue.enqueue(new SNode(8));
-        queue.enqueue(new SNode(9));
-        queue.enqueue(new SNode(10));
-        queue.dequeue();
-        queue.enqueue(new SNode(1000));
-        queue.enqueue(new SNode(999));
-        queue.Print();
-
-        
     }
     
 }

@@ -1,7 +1,7 @@
 package data_structure_lib;
 import org.junit.jupiter.api.Test;
 
-import myLib.dataStructure.nodes.TNode;
+import myLib.dataStructures.nodes.TNode;
 
 import org.junit.jupiter.api.Assertions;
 

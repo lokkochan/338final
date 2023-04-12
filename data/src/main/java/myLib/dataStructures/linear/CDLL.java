@@ -1,4 +1,4 @@
-package myLib.dataStructures.linear.LinkedLists;
+package myLib.dataStructures.linear;
 
 import myLib.dataStructures.nodes.DNode;
 
@@ -258,42 +258,5 @@ public class CDLL extends DLL {
               temp = temp.next;
          }
    }
-
-
-    public static void main(String[] args) {
-        CDLL CDLL = new CDLL();
-        CDLL.InsertHead(new DNode(1));
-        CDLL.InsertHead(new DNode(2));
-        CDLL.InsertHead(new DNode(3));
-        CDLL.InsertTail(new DNode(4));
-        CDLL.Print();
-        System.out.println("Circular: " + CDLL.isCircular());
-        System.out.println("DLL:" + CDLL.isDoublyLinkedList());
-
-        CDLL.Insert(new DNode(5), 2);
-        CDLL.Print();
-
-        CDLL.DeleteHead();
-        CDLL.Print();
-
-        CDLL.DeleteTail();
-        CDLL.Print();
-
-        DNode node = new DNode(1000);
-        CDLL.InsertHead(node);
-        CDLL.Print();
-        CDLL.Delete(node);
-        CDLL.Print();
-
-        // CDLL.SortedInsert(new Dnode(100));
-        CDLL.Sort();
-        CDLL.Print();
-        System.out.println("Circular: " + CDLL.isCircular());
-        System.out.println("DLL:" + CDLL.isDoublyLinkedList());
-
-        // CDLL.Clear();
-        // CDLL.Print();
-
-    }
 
 }
