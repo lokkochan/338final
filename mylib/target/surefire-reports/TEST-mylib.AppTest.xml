@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mylib.AppTest" time="0.06" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mylib.AppTest" time="0.078" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="MS950"/>
-    <property name="java.class.path" value="C:\Users\chunl\OneDrive\文件\GitHub\338final\mylib\target\test-classes;C:\Users\chunl\OneDrive\文件\GitHub\338final\mylib\target\classes;C:\Users\chunl\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\chunl\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="c:\Users\chunl\OneDrive\文件\GitHub\338final\mylib\target\test-classes;c:\Users\chunl\OneDrive\文件\GitHub\338final\mylib\target\classes;C:\Users\chunl\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\chunl\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -17,9 +17,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="HK"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.17\bin"/>
-    <property name="sun.java.command" value="C:\Users\chunl\AppData\Local\Temp\surefire10714232567478199071\surefirebooter157467847550323617.jar C:\Users\chunl\AppData\Local\Temp\surefire10714232567478199071 2023-04-13T14-04-32_965-jvmRun1 surefire14007484622397189041tmp surefire_09657925118011376324tmp"/>
+    <property name="sun.java.command" value="C:\Users\chunl\AppData\Local\Temp\surefire15052514902069730054\surefirebooter18436208802345349594.jar C:\Users\chunl\AppData\Local\Temp\surefire15052514902069730054 2023-04-13T14-28-47_159-jvmRun1 surefire5369321697192569797tmp surefire_015398850102616633689tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\chunl\OneDrive\文件\GitHub\338final\mylib\target\test-classes;C:\Users\chunl\OneDrive\文件\GitHub\338final\mylib\target\classes;C:\Users\chunl\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\chunl\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="c:\Users\chunl\OneDrive\文件\GitHub\338final\mylib\target\test-classes;c:\Users\chunl\OneDrive\文件\GitHub\338final\mylib\target\classes;C:\Users\chunl\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\chunl\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\chunl"/>
     <property name="user.language" value="zh"/>
@@ -27,13 +27,13 @@
     <property name="java.version.date" value="2022-10-18"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-11.0.17"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\Users\chunl\OneDrive\文件\GitHub\338final\mylib"/>
+    <property name="basedir" value="c:\Users\chunl\OneDrive\文件\GitHub\338final\mylib"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\chunl\AppData\Local\Temp\surefire10714232567478199071\surefirebooter157467847550323617.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\chunl\AppData\Local\Temp\surefire15052514902069730054\surefirebooter18436208802345349594.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.17+10-LTS-269"/>
@@ -48,7 +48,7 @@
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\chunl\AppData\Local\Temp\"/>
     <property name="java.version" value="11.0.17"/>
-    <property name="user.dir" value="C:\Users\chunl\OneDrive\文件\GitHub\338final\mylib"/>
+    <property name="user.dir" value="c:\Users\chunl\OneDrive\文件\GitHub\338final\mylib"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
@@ -60,5 +60,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="mylib.AppTest" time="0.003"/>
+  <testcase name="shouldAnswerWithTrue" classname="mylib.AppTest" time="0.004"/>
 </testsuite>
