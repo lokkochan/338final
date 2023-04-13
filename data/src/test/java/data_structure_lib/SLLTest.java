@@ -4,8 +4,17 @@ import myLib.dataStructures.nodes.SNode;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Unit test for SLL.
+ */
 public class SLLTest {
+    @Test
+    void testIsEmpty() {
+        SLL list = new SLL();
+        assertTrue(list.isEmpty());
+        list.InsertHead(new SNode(1));
+        assertFalse(list.isEmpty());
+    }
 
     @Test
     void testInsertHead() {
@@ -106,6 +115,29 @@ public class SLLTest {
         assertNull(linkedList.Search(node2));
         assertNotNull(linkedList.Search(node1));
         assertEquals(1, linkedList.getsize());
+    }
+    @Test
+    void testDeleteHead(){
+        SLL list = new SLL();
+        list.InsertHead(new SNode(2));
+        list.InsertHead(new SNode(1));
+        list.InsertTail(new SNode(3));
+        assertEquals(3, list.getsize());
+        list.DeleteHead();
+        assertEquals(2, list.getsize());
+        assertEquals(2, list.gethead().data);
+    }
+    @Test
+    void testDeleteTail(){
+        SLL list = new SLL();
+        list.InsertHead(new SNode(2));
+        list.InsertHead(new SNode(1));
+        list.InsertTail(new SNode(3));
+        assertEquals(3, list.getsize());
+        list.DeleteTail();
+        list.Print();
+        assertEquals(2, list.getsize());
+        assertEquals(2, list.gettail().data);
     }
     
     @Test

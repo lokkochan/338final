@@ -108,12 +108,6 @@ public class AVL extends BST {
         }
         adjustBalance(this.root);
     }
-    @Override
-    public void Delete(int item){
-        super.Delete(item);
-        adjustBalance(this.root);
-    }
-
     public TNode doRotate(TNode node){
         int balance=node.getBalance();
         if(balance>1){

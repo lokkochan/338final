@@ -249,5 +249,12 @@ public class DLL {
         }
         return true;
     }
+    public boolean isEmpty(){
+        if(head == null){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }

@@ -5,7 +5,9 @@ import myLib.dataStructures.tree.AVL;
 import myLib.dataStructures.nodes.TNode;
 import myLib.dataStructures.tree.BST;
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Unit test for AVL App.
+ */
 public class AVLTest {
     
     @Test

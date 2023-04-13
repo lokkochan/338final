@@ -5,8 +5,19 @@ import myLib.dataStructures.linear.CDLL;
 import myLib.dataStructures.nodes.DNode;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Unit test for CDLL.
+ */
 public class CDLLTest {
+    @Test
+    public void testIsEmpty() {
+        CDLL list = new CDLL();
+        assertTrue(list.isEmpty());
+
+        list.InsertTail(new DNode(1));
+        assertFalse(list.isEmpty());
+    }
+
     @Test
     public void testInsertTail() {
         CDLL list = new CDLL();

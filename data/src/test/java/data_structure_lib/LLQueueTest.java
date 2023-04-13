@@ -4,9 +4,18 @@ import myLib.dataStructures.nodes.SNode;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Unit test for Queue.
+ */
 
 public class LLQueueTest {
+    @Test
+    public void testIsEmpty() {
+        Queue queue = new Queue();
+        assertTrue(queue.isEmpty());
+        queue.enqueue(new SNode(1));
+        assertFalse(queue.isEmpty());
+    }
     @Test
     public void testEnqueue() {
         Queue queue = new Queue();

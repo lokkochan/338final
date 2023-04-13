@@ -5,9 +5,18 @@ import myLib.dataStructures.nodes.SNode;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit test for CSLL.
+ */
 
 public class CSLLTest {
-
+    @Test
+    public void testIsEmpty() {
+        CSLL list = new CSLL();
+        assertEquals(true, list.isEmpty());
+        list.InsertTail(new SNode(1));
+        assertEquals(false, list.isEmpty());
+    }
     @Test
     public void testInsertTail() {
         CSLL list = new CSLL();

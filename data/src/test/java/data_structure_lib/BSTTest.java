@@ -6,7 +6,9 @@ import myLib.dataStructures.tree.BST;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-
+/**
+ * Unit test for BST.
+ */
 public class BSTTest {
     @Test
     public void testIsEmpty() {

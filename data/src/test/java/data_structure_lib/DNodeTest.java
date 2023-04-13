@@ -3,7 +3,9 @@ import myLib.dataStructures.nodes.DNode;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
+/**
+ * Unit test for DNode.
+ */
 public class DNodeTest {
     @Test
     public void testGetNext() {

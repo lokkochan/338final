@@ -67,6 +67,7 @@ public class SLL {
             insertNode.next = temp.next;
             temp.next = insertNode;
             size++;
+
         }
     }
     public void SortedInsert(SNode insertNode){
@@ -119,18 +120,27 @@ public class SLL {
         head = head.next;
         size--;
     }
-    public void DeleteTail(){
-        if(head == null){
+    public void DeleteTail() {
+        if (head == null) {
             throw new IllegalStateException("List is empty");
         }
+        if (head == tail) {
+            head = null;
+            tail = null;
+            size = 0;
+            return;
+        }
         SNode temp = head;
-        while(temp.next != tail){
+        while (temp.next != tail) {
             temp = temp.next;
         }
         temp.next = null;
         tail = temp;
         size--;
     }
+    
+
+        
     public void Delete(SNode node){
         if(Search(node)==null){
             throw new IllegalArgumentException();
@@ -189,5 +199,12 @@ public class SLL {
         }
 
 
+    }
+    public boolean isEmpty(){
+        if(head == null){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

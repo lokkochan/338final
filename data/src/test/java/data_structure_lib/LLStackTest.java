@@ -3,8 +3,17 @@ import myLib.dataStructures.linear.Stack;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-
+/**
+ * Unit test for Stack.
+ */
 public class LLStackTest {
+    @Test
+    public void testIsEmpty() {
+        Stack stack = new Stack();
+        assertTrue(stack.isEmpty());
+        stack.push(1);
+        assertFalse(stack.isEmpty());
+    }
     @Test
     public void testPush() {
         Stack stack = new Stack();

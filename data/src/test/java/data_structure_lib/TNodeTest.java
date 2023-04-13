@@ -5,7 +5,9 @@ import myLib.dataStructures.nodes.TNode;
 
 import org.junit.jupiter.api.Assertions;
 
-
+/**
+ * Unit test for TNode.
+ */
 public class TNodeTest {
     
     @Test

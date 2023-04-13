@@ -40,13 +40,6 @@ public class Stack extends SLL {
         System.out.println("Stack is a LIFO data structure. Sort is not allowed");
     }
     public int getLength(){
-        // int count = 0;
-        // SNode current = this.head;
-        // while (current != null){
-        //     count++;
-        //     current = current.getNext();
-        // }
-        // return count;
         if(super.head == null){
             return 0;}
         return super.size;
